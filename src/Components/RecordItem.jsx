@@ -14,6 +14,7 @@ const RecordItem = ({ record, isSelected, onSelect, onSave, onDelete }) => {
 
   const handleSaveClick = () => {
     onSave(editedValues);
+    console.log(editedValues);
     setIsEditing(false);
   };
 

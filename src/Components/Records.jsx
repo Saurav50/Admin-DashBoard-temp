@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import RecordItem from "./RecordItem";
 import "./Records.css";
 
-const Records = ({ data, editedRecords, onEdit }) => {
+const Records = ({ data, onEdit }) => {
   const [deletedRecordIds, setDeletedRecordIds] = useState([]);
   const [selectedIds, setSelectedIds] = useState([]);
 
@@ -22,9 +22,6 @@ const Records = ({ data, editedRecords, onEdit }) => {
     );
   };
 
-  const handleSave = (editedValues) => {
-    onEdit(editedValues);
-  };
   const onDelete = (recordId) => {
     setDeletedRecordIds((prevIds) => [...prevIds, recordId]);
   };
@@ -53,6 +50,7 @@ const Records = ({ data, editedRecords, onEdit }) => {
   const visibleRecords = data.filter(
     (record) => !deletedRecordIds.includes(record.id)
   );
+
   return (
     <div className="records-container">
       <div className="records-card">
@@ -72,15 +70,10 @@ const Records = ({ data, editedRecords, onEdit }) => {
             {visibleRecords.map((record) => (
               <RecordItem
                 key={record.id}
-                record={
-                  editedRecords.find(
-                    (editedRecord) => editedRecord.id === record.id
-                  ) || record
-                }
+                record={record}
                 isSelected={selectedIds.includes(record.id)}
                 onSelect={handleSelect}
-                onEdit={onEdit}
-                onSave={handleSave}
+                onSave={onEdit}
                 onDelete={onDelete}
               />
             ))}

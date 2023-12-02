@@ -39,7 +39,7 @@ const App = () => {
   const allRecordsCombined = [
     ...originalRecordsWithoutDuplicates,
     ...editedRecords,
-  ];
+  ].sort((a, b) => a.id - b.id);
 
   // Filter records based on the search term for both original and edited records
   const filteredRecords = allRecordsCombined.filter((record) => {
@@ -49,9 +49,7 @@ const App = () => {
 
   const startIndex = (currentPage - 1) * recordsPerPage;
   const endIndex = startIndex + recordsPerPage;
-  const currentRecords = filteredRecords
-    .slice(startIndex, endIndex)
-    .sort((a, b) => a.id - b.id);
+  const currentRecords = filteredRecords.slice(startIndex, endIndex);
 
   const handlePageChanged = (page) => {
     setCurrentPage(page);
@@ -77,11 +75,7 @@ const App = () => {
         onChange={(e) => handleSearch(e.target.value)}
         className="search"
       />
-      <Records
-        data={currentRecords}
-        editedRecords={editedRecords}
-        onEdit={handleEdit}
-      />
+      <Records data={currentRecords} onEdit={handleEdit} />
       <div className="pagination">
         <Pagination
           totalRecords={filteredRecords.length}
