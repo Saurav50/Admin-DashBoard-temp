@@ -50,3 +50,9 @@ th {
   font-weight: 600;
   opacity: 0.9;
 }
+
+.select-all-col {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}

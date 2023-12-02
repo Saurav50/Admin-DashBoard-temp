@@ -54,16 +54,23 @@ const Records = ({ data, onEdit }) => {
   return (
     <div className="records-container">
       <div className="records-card">
-        <table>
+        <table summary="User Records">
           <thead>
             <tr>
-              <th>
-                <input type="checkbox" onChange={handleSelectAll} />
+              <th scope="col" className="select-all-col">
+                <input
+                  type="checkbox"
+                  id="selectAllCheckbox"
+                  onChange={handleSelectAll}
+                />
+                <label htmlFor="selectAllCheckbox" className="select-all">
+                  Select All
+                </label>
               </th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Actions</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -80,10 +87,11 @@ const Records = ({ data, onEdit }) => {
           </tbody>
           <tfoot>
             <tr>
-              <td>
+              <td colSpan="5">
                 <button
                   onClick={handleDeleteSelected}
                   className="delete-selected"
+                  aria-label="Delete Selected Records"
                 >
                   Delete Selected
                 </button>
