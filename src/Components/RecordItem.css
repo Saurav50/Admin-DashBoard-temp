@@ -1,0 +1,17 @@
+/* RecordItem.css */
+.small-image {
+  width: 15px; /* Adjust the width to your preferred size */
+  height: 15px; /* Adjust the height to your preferred size */
+}
+button {
+  background-color: transparent;
+  margin-right: 5px;
+  border: 0.5px solid;
+  border-color: gainsboro;
+  padding: 3px;
+  border-radius: 4px;
+}
+/* RecordItem.css */
+.selected-row {
+  background-color: #e0e0e0 !important; /* Grayish background color for selected rows */
+}

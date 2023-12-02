@@ -1,0 +1,14 @@
+.app {
+  width: 65vw;
+  font-family: "Mooli", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.search {
+  margin-left: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  /* filter: drop-shadow(3px 3px 4px #252525); */
+  padding: 6px;
+  width: 22.5%;
+}
