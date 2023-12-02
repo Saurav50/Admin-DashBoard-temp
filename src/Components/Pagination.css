@@ -1,7 +1,7 @@
 .page-display {
   margin-right: 10px;
   color: gray;
-  opacity: 0.9;
+
   font-size: small;
 }
 .pagination {
@@ -9,6 +9,9 @@
   justify-content: flex-end;
   margin-right: 10px;
   align-items: center;
+}
+button {
+  padding: 4px 7px;
 }
 button.active {
   background-color: #f2f2f2; /* Set the background color for the active button */

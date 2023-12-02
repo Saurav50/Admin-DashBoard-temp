@@ -81,13 +81,15 @@ const RecordItem = ({ record, isSelected, onSelect, onSave, onDelete }) => {
       </td>
       <td>
         {isEditing ? (
-          <button onClick={handleSaveClick}>Save</button>
+          <button onClick={handleSaveClick} className="save">
+            Save
+          </button>
         ) : (
-          <button onClick={handleEditClick}>
+          <button onClick={handleEditClick} className="edit">
             <img src={image2} alt="Edit" className="small-image" />
           </button>
         )}
-        <button onClick={handleDeleteClick}>
+        <button onClick={handleDeleteClick} className="delete">
           <img src={image1} alt="Delete" className="small-image" />
         </button>
       </td>

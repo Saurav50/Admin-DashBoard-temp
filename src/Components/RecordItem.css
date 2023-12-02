@@ -15,3 +15,18 @@ button {
 .selected-row {
   background-color: #e0e0e0 !important; /* Grayish background color for selected rows */
 }
+.delete,
+.edit,
+.save {
+  cursor: pointer;
+  padding: 4px;
+}
+.save:hover {
+  border: 1px solid green;
+}
+.delete:hover {
+  border: 1px solid saddlebrown;
+}
+.edit:hover {
+  border: 1px solid grey;
+}

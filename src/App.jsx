@@ -73,7 +73,7 @@ const App = () => {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        className="search"
+        className="search-icon"
       />
       <Records data={currentRecords} onEdit={handleEdit} />
       <div className="pagination">
